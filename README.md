@@ -28,5 +28,14 @@ Although longer, one might find this version even simpler to understand:
 `shuf` just generates a random permutation of the standard input, limiting the results to 10 (like using head, but probably faster).
 
 ```bash
-shuf -n 1250 -e *|xargs -i mv {} /home/DL_PyTorch/Cat_Dog_data/test/Dog 
+shuf -n 1250 -e *|xargs -i mv {} /home/DL_PyTorch/Cat_Dog_data/test/Dog
 ```
+# Git alias
+| Command | Git command | Actual Alias |
+|---|---|---|
+| Git stash status | `git sstash` | `sstash = status --show-stash` |
+| Git log one line graph | `git lol` | `lol = log --oneline --graph` |
+| Git history | `git hist` | `hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short` |
+| One liner with colors | `git l1` | `l1 = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short` |
+| Graph one liner | `git l2` | `l2 = log --graph --oneline --decorate --all` |
+| Details about the last commit | `git last` | ``` last = log -p -1 [filter "lfs"] required = true clean = git-lfs clean -- %f smudge = git-lfs smudge -- %f process = git-lfs filter-process``` |
