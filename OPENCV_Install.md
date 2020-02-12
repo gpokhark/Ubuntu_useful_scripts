@@ -5,6 +5,13 @@ https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html
 
 https://www.learnopencv.com/install-opencv3-on-ubuntu/ 
 
+https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/
+
+Anaconda Problem:
+https://github.com/pism/pism/issues/356
+
+https://github.com/opencv/opencv/issues/13154#issue-380404751
+
 ```
 git clone https://github.com/opencv/opencv.git 
 
