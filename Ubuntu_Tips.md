@@ -54,3 +54,32 @@ And then just do `git stash-untracked`
 This happens unless there are conflicts after `git stash pop`, in which case it will not remove the stash, leaving it to behave exactly like `git stash apply`. 
 
 Another way to look at it: `git stash pop` is `git stash apply && git stash drop`. 
+
+# Find
+[Help](https://ss64.com/bash/find.html)
+
+To test the command before actually doing anything
+```
+find . -iname '*(1)*' -print
+```
+
+## Examples
+List filenames matching the name Alice or ALICE (case insensitive), search in the current folder (.) only:
+```
+find . -maxdepth 1 -iname "alice" -print0
+```
+
+# Find and mv
+First check the output
+```
+find . -iname '*(1)*' -print
+
+```
+To search in the current folder only specify `-maxdepth` as `1`
+```
+find . -maxdepth  1 -iname '*(1)*' -print
+```
+For find and move, use in conjunction with the `-exec` command
+```
+find . -maxdepth 1 -iname '*(1)*' -exec mv '{}' ./duplicates/ \;
+```
