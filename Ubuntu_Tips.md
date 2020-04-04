@@ -83,3 +83,7 @@ For find and move, use in conjunction with the `-exec` command
 ```
 find . -maxdepth 1 -iname '*(1)*' -exec mv '{}' ./duplicates/ \;
 ```
+
+# VMware Workstation
+
+[VMware Error - Could not open /dev/vmmon: No such file or directory](https://askubuntu.com/questions/1096052/vmware-15-error-on-ubuntu-18-4-could-not-open-dev-vmmon-no-such-file-or-dire)!
