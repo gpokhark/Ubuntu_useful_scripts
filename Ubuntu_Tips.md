@@ -87,3 +87,9 @@ find . -maxdepth 1 -iname '*(1)*' -exec mv '{}' ./duplicates/ \;
 # VMware Workstation
 
 [VMware Error - Could not open /dev/vmmon: No such file or directory](https://askubuntu.com/questions/1096052/vmware-15-error-on-ubuntu-18-4-could-not-open-dev-vmmon-no-such-file-or-dire)!
+
+# ROS Installations
+- Installed ROS melodic - http://wiki.ros.org/melodic/Installation/Ubuntu
+- Check the [~/.bashrc file](./bashrc) for the bashrc setup. Anaconda and ROS causes lot of issues together, so you need [to remove anaconda from the PATH variable when you want to work with ROS](http://wiki.ros.org/IDEs)
+- If there is [ROS_IP error](https://answers.ros.org/question/308799/melodic-network-setup-invalid-ros_ip-protocol-should-not-be-included/)
+- [Gazebo [Err] [REST.cc:205] Error in REST request.](https://www.youtube.com/watch?v=ftDz_EVoatw)
