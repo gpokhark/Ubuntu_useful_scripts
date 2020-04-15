@@ -4,6 +4,7 @@
 [Opencv Doc](https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html)
 
 [Learn OPENCV - Install OpenCV3 on Ubuntu](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
+[Learn OPENCV - Install OpenCV3 on Ubuntu](https://www.learnopencv.com/install-opencv-4-on-ubuntu-18-04/#viewSource)
 
 [How to Install OpenCV on Ubuntu 18.04](https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/)
 
