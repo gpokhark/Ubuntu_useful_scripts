@@ -93,3 +93,9 @@ find . -maxdepth 1 -iname '*(1)*' -exec mv '{}' ./duplicates/ \;
 - Check the [~/.bashrc file](./bashrc) for the bashrc setup. Anaconda and ROS causes lot of issues together, so you need [to remove anaconda from the PATH variable when you want to work with ROS](http://wiki.ros.org/IDEs)
 - If there is [ROS_IP error](https://answers.ros.org/question/308799/melodic-network-setup-invalid-ros_ip-protocol-should-not-be-included/)
 - [Gazebo [Err] [REST.cc:205] Error in REST request.](https://www.youtube.com/watch?v=ftDz_EVoatw)
+
+# Cleaning and Freeing up memory
+- [7 Simple Ways To Free Up Space On Ubuntu and Linux Mint](https://itsfoss.com/free-up-space-ubuntu-linux/)
+- [Remove Unnecessary Configuration Files On Debian-based Systems](https://www.ostechnix.com/remove-unnecessary-configuration-files-on-debian-based-systems/)
+ - [5 Simple Ways To Free Up Space on Ubuntu](https://www.omgubuntu.co.uk/2016/08/5-ways-free-up-space-on-ubuntu)
+ - [Delete temporary files](https://stackoverflow.com/questions/33561125/how-to-clean-delete-temporary-files-if-they-exist-in-ubuntu-os) - `sudo rm -rf /tmp/*`
