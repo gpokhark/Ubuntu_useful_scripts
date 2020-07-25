@@ -13,39 +13,40 @@
 - Create two text files file1 and file2 in any directory add add random content to it. Git bash in that folder and use the command `code -d file1 file2` to compare the contents of the files.
 - `.gitconfig` - file where you can aliases and any other configuration related stuff. To open this document type the command `code ~/.gitconfig`.
 I would suggest copy paste the following in that file just as it is for now. You can learn more about the commands eventually.
-```
-[alias]
-sstash = status --show-stash
-lol = log --oneline --graph
-hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-# One liner with colors
-l1 = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-# Graph one liner
-l2 = log --graph --oneline --decorate --all
-# Details about the last commit
-last = log -p -1
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+	```
+	[alias]
+	sstash = status --show-stash
+	lol = log --oneline --graph
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	# One liner with colors
+	l1 = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	# Graph one liner
+	l2 = log --graph --oneline --decorate --all
+	# Details about the last commit
+	last = log -p -1
+	[filter "lfs"]
+		required = true
+		clean = git-lfs clean -- %f
+		smudge = git-lfs smudge -- %f
+		process = git-lfs filter-process
 
-```
+	```
 - Use the command `git remote -v` and google more information about it.
 - Use the command `git branch -a` and google more information about it.
 - Read more about `git checkout branch` command.
 - When you want to undo some changes read more about the commands `git reset --hard` and `git reset --soft`. *Warning - Read carefully about both command and then use accordingly.*
 - After you have couple of commits and branches use the created aliases, which will give you an overall idea about the `git hist` and `git log` 
-```
-git lol
-git hist
-git l1
-git l2
-git last
-```
+	```
+	git lol
+	git hist
+	git l1
+	git l2
+	git last
+	```
 - You can add various extensions to the visual studio code to view the git history or git log.
 - Google and learn a bit more about the `git diff` command.
 - Once you feel comfortable with the above things learn more about `git stash`[tutorial](https://www.atlassian.com/git/tutorials/saving-changes/git-stash).
 - To learn more about any command you can use google or use the following command in the terminal-
     - `man command` eg. `man git add` or `man git stash` or `man git log`
     - `command --help` eg. `git reset --help` or `grep --help` or `code --help` or `ls --help`
+- To ignore changes in certain file use the code - `git update-index --skip-worktree <file_name>` read more about it [here](https://compiledsuccessfully.dev/git-skip-worktree/) and [here](https://stackoverflow.com/questions/55860925/git-skip-worktree-on-all-tracked-files-inside-directory-and-its-subdirectories). **Note- It cannot be applied recursively.**
