@@ -7,6 +7,15 @@ Cleanup downloaded libraries (remove tarballs, zip files, etc):
 
 `conda clean -tp `
 
+# Conda Environment
+- [Information](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+- Create new conda environment named myenv `conda create --name myenv python=3.7`
+- To delete an environment `conda env remove --name myenv`
+- You can use explicit specification files to build an identical conda environment on the same operating system platform, either on the same machine or on a different machine - `conda list --explicit > myenv_explicit.yml`
+- Remove build specification from dependencies - `conda env export --no-build > myenv_no_build.yml`
+- [Share conda environment across platforms.](https://stackoverflow.com/questions/39280638/how-to-share-conda-environments-across-platforms). This will only include packages that you’ve explicitly asked for, as opposed to including every package in your environment - `conda env export --from-history > myenv_from_history.yml`
+- To create environment from a file - `conda create --name <env> --file <this file>`
+
 # To use local GPU in conda 
 For additional information 
 
