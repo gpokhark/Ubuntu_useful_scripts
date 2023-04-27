@@ -77,25 +77,8 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -125,20 +108,20 @@ export PATH=/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1${
 # End CUDA Toolkit
 
 export NOCONDA_PATH=$PATH
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/gaurav/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/gaurav/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gaurav/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/gaurav/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/gaurav/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/gaurav/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/gaurav/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/gaurav/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
 
 # <<< ROS initialize <<<
 # For ROS setup you will have to remove the conda from path
@@ -150,10 +133,13 @@ read -p "Do you want to source ROS in this workspace (y/n): " input_choice
 
 if [ "$input_choice" = "y" ]
 then
+  source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
   echo "ROS sourced!"
   # Source ROS
   export PATH=$NOCONDA_PATH
-  source /opt/ros/melodic/setup.bash
+  export ROS_MASTER_URI=http://192.168.0.164:11311
+  export ROS_HOSTNAME=192.168.0.164
+  source /opt/ros/humble/setup.bash
   # Change ROS editor to nano
   export EDITOR='nano -w'
   # Set up ROS ip
@@ -180,3 +166,24 @@ fi
 
 done
 # <<< ROS initialize <<<
+
+# <<< conda initialize <<<
+# added by Miniconda3 4.3.11 installer
+# export PATH="/home/gaurav/miniconda3/bin:$PATH"
+export PATH=$NOCONDA_PATH
+#export PATH="/home/gaurav/miniconda3/bin:$PATH"
+
+# >>> miniconda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gaurav/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gaurav/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gaurav/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gaurav/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+

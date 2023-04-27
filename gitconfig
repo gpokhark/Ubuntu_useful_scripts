@@ -1,0 +1,20 @@
+[user]
+email = abc@email.com
+name = abc
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
+[alias]
+sstash = status --show-stash
+lol = log --oneline --graph
+hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+# One liner with colors
+l1 = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+# Graph one liner
+l2 = log --graph --oneline --decorate --all
+# Details about the last commit
+last = log -p -1
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
